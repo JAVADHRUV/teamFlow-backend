@@ -25,14 +25,7 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Transactional
-    public User createUser(
-            String name,
-            String email,
-            String passwordHash,
-            Role role,
-            Organization organization
-    ) {
+    public User createUser(CreateUserRequest request) {
 
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new IllegalArgumentException("Email already in use");
