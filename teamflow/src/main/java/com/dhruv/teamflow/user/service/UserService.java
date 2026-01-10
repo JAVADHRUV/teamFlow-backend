@@ -21,6 +21,8 @@ public class UserService {
             PasswordEncoder passwordEncoder
     ) {
         this.userRepository = userRepository;
+        this.organizationRepository = organizationRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
