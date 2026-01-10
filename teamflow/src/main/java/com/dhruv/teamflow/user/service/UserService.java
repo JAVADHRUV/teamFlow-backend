@@ -4,6 +4,7 @@ import com.dhruv.teamflow.organization.entity.Organization;
 import com.dhruv.teamflow.user.entity.Role;
 import com.dhruv.teamflow.user.entity.User;
 import com.dhruv.teamflow.user.repository.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
