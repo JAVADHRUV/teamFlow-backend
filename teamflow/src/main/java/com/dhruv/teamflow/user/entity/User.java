@@ -12,9 +12,9 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "users")
-public class User extends BaseEntity {
+@AllArgsConstructor
+@Builder
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
