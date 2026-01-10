@@ -1,0 +1,6 @@
+POST http://localhost:8081/api/organizations
+Content-Type: application/json
+
+{
+  "name": "Org From IntelliJ"
+}
