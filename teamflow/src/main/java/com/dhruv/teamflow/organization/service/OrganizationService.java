@@ -26,4 +26,14 @@ public class OrganizationService {
 
         return organizationRepository.save(organization);
     }
+
+    public List<Organization> getAllOrganizations() {
+        return organizationRepository.findAll();
+    }
+
+    public Organization getOrganizationById(Long id) {
+        return organizationRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Organization not found"));
+    }
+
 }
