@@ -34,7 +34,7 @@ public class UserService {
             Organization organization
     ) {
 
-        if (userRepository.existsByEmail(email)) {
+        if (userRepository.existsByEmail(request.getEmail())) {
             throw new IllegalArgumentException("Email already in use");
         }
 
