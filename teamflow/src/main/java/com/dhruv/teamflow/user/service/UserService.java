@@ -12,7 +12,11 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(
+            UserRepository userRepository,
+            OrganizationRepository organizationRepository,
+            PasswordEncoder passwordEncoder
+    ) {
         this.userRepository = userRepository;
     }
 
