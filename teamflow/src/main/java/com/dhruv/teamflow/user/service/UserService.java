@@ -29,12 +29,18 @@ public class UserService {
             throw new IllegalArgumentException("Email already in use");
         }
 
-        User user = new User();
-        user.setName(name);
-        user.setEmail(email);
-        user.setPasswordHash(passwordHash);
-        user.setRole(role);
-        user.setOrganization(organization);
+        var organization = organizationRepository
+                .findById(request.getOrganizationId())
+                .orElseThrow(() -> new IllegalStateException("Organization not found"));
+
+        User user = User.builder()
+                .name(request.getName())
+                .email(request.getEmail())
+                .passwordHash(passwordEncoder.encode(request.getPassword()))
+                .role(request.getRole())
+                .organization(organization)
+                .isActive(true)
+                .build();
 
         return userRepository.save(user);
     }
