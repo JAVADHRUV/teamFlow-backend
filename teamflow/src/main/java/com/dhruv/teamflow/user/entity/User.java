@@ -3,9 +3,7 @@ package com.dhruv.teamflow.user.entity;
 import com.dhruv.teamflow.common.BaseEntity;
 import com.dhruv.teamflow.organization.entity.Organization;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
